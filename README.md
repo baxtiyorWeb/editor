@@ -821,7 +821,7 @@ function Toolbar({
     <div
       ref={setFloating}
       style={{
-        position: strategy,
+        position: 'fixed',
         top: 0,
         left: 0,
         transform: `translate3d(${Math.round(x)}px, ${Math.round(y)}px, 0)`,

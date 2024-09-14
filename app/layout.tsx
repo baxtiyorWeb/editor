@@ -6,6 +6,9 @@ import { Metadata } from "next"
 import { ClerkProvider } from "@clerk/nextjs"
 import { dark } from "@clerk/themes"
 import Provider from "./Provider"
+import env from "dotenv"
+
+env.config()
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider
-      publishableKey={process.env.LIVEBLOCKS_SECRET_KEY}
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
 
       appearance={{
         baseTheme: dark,

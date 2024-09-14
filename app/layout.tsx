@@ -20,10 +20,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider
+      publishableKey={process.env.LIVEBLOCKS_SECRET_KEY}
+
       appearance={{
         baseTheme: dark,
-        variables: { 
-          colorPrimary: "#3371FF" ,
+        variables: {
+          colorPrimary: "#3371FF",
           fontSize: '16px'
         },
       }}
